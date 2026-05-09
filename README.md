@@ -19,9 +19,9 @@ Su objetivo es reducir la pérdida de objetos personales mediante un sistema rá
 
 ## 🛠️ Tecnologías utilizadas
 
-- Frontend: HTML, CSS, JavaScript (o framework si aplica)
-- Backend: Node.js / Python / PHP (ajusta según tu proyecto)
-- Base de datos: MySQL / PostgreSQL / MongoDB
+- Frontend: HTML, CSS, JavaScript 
+- Backend: Node.js / Python 
+- Base de datos: MySQL 
 - Control de versiones: Git & GitHub
 
 ---
