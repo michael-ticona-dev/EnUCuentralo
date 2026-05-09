@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EnUCuentralo — Objetos Perdidos UC</title>
+    <meta name="description" content="Plataforma segura de objetos perdidos y encontrados de la Universidad Continental.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    
+    <div class="layout">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo-container">
+                <i data-lucide="search" class="logo-icon"></i>
+                <h1 class="logo-text">UC</h1>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><i data-lucide="home"></i> Inicio</li>
+                <li><i data-lucide="bell"></i> Notificaciones</li>
+                <li><i data-lucide="mail"></i> Mensajes</li>
+                <li><i data-lucide="user"></i> Perfil</li>
+            </ul>
+
+            <div class="admin-toggle-container">
+                <label class="switch">
+                    <input type="checkbox" id="adminModeToggle">
+                    <span class="slider round"></span>
+                </label>
+                <span class="admin-label"><i data-lucide="shield-alert"></i> Modo Admin</span>
+            </div>
+
+            <button class="btn-primary huge-btn" id="openModalBtn">
+                <i data-lucide="plus"></i> Se me perdió...
+            </button>
+        </nav>
+
+        <!-- Main Feed -->
+        <main class="feed">
+            <header class="feed-header">
+                <h2>Inicio</h2>
+                <div class="search-bar" id="searchBarContainer">
+                    <i data-lucide="search"></i>
+                    <input type="text" id="searchInput" placeholder="Buscar objetos perdidos...">
+                </div>
+            </header>
+
+            <div id="postsContainer" class="posts-container">
+                <div class="loading-spinner">Cargando posts...</div>
+            </div>
+        </main>
+
+        <!-- Right Panel (Admin / Crypto Log) -->
+        <aside class="right-panel" id="adminRightPanel" style="display: none; animation: fadeIn 0.3s ease;">
+            <div class="panel-section crypto-panel">
+                <h3><i data-lucide="lock"></i> Criptografía Activa</h3>
+                <div id="cryptoLog" class="terminal-log">
+                    <p class="sys-msg">Sistema Seguro Inicializado...</p>
+                </div>
+            </div>
+
+            <div class="panel-section crud-panel">
+                <h3><i data-lucide="database"></i> Operaciones CRUD (ORM)</h3>
+                <div id="ormLog" class="terminal-log orm-terminal">
+                    <p class="sys-msg">ORM Simulador Listo...</p>
+                </div>
+            </div>
+
+            <button id="copyXssBtn" class="btn-outline" style="display: block; width: 100%; margin-top: 4px; padding: 12px; font-size: 0.85rem;">
+                <i data-lucide="copy"></i> Copiar Payload XSS
+            </button>
+        </aside>
+    </div>
+
+    <!-- Mega Form Modal -->
+    <div id="postModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Reportar Objeto</h2>
+                <button class="close-modal" id="closeModalBtn"><i data-lucide="x"></i></button>
+            </div>
+            <form id="postForm" class="mega-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">Nombres</label>
+                        <input type="text" id="firstName" placeholder="Ingrese sus nombres" required>
+                        <span class="error-msg" id="err-firstName"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Apellidos</label>
+                        <input type="text" id="lastName" placeholder="Ingrese sus apellidos" required>
+                        <span class="error-msg" id="err-lastName"></span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dni">DNI <span class="badge-secure"><i data-lucide="lock"></i> Será Hashed</span></label>
+                    <input type="text" id="dni" maxlength="8" pattern="\d{8}" placeholder="Número de documento" required>
+                    <span class="error-msg" id="err-dni"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Descripción del Objeto / Suceso</label>
+                    <textarea id="description" rows="3" placeholder="Proporcione detalles específicos..." required></textarea>
+                    <span class="error-msg" id="err-description"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="whatsapp">WhatsApp (Oculto al público)</label>
+                    <input type="tel" id="whatsapp" placeholder="+51 999 999 999" required>
+                    <span class="error-msg" id="err-whatsapp"></span>
+                </div>
+
+                <div class="form-group file-upload-group">
+                    <label for="imageUpload" class="file-upload-label">
+                        <span class="upload-icon"><i data-lucide="image"></i></span>
+                        Subir Imagen (.png, .jpg)
+                        <span class="upload-hint">Arrastra o haz clic para seleccionar</span>
+                    </label>
+                    <input type="file" id="imageUpload" accept=".png,.jpg,.jpeg">
+                    <div id="imagePreviewContainer" class="image-preview" style="display: none;">
+                        <img id="imagePreview" src="" alt="Vista previa">
+                    </div>
+                    <span class="error-msg" id="err-image"></span>
+                </div>
+
+                <button type="submit" class="btn-primary" id="submitPostBtn">Publicar Reporte <i data-lucide="send"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Private Chat Modal -->
+    <div id="chatModal" class="modal-overlay">
+        <div class="modal-content chat-modal">
+            <div class="modal-header">
+                <h2><i data-lucide="message-square"></i> Chat Privado Seguro</h2>
+                <button class="close-modal" id="closeChatBtn"><i data-lucide="x"></i></button>
+            </div>
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="msg system">Intercambio de Llaves Públicas completado. El chat está cifrado de extremo a extremo.</div>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" id="chatInput" placeholder="Escribe un mensaje...">
+                    <button class="btn-icon" id="sendChatBtn"><i data-lucide="send"></i></button>
+                </div>
+                <div class="chat-actions">
+                    <button class="btn-outline btn-sm" id="sendProofBtn"><i data-lucide="camera"></i> Enviar Foto Prueba</button>
+                    <button class="btn-primary btn-sm" id="acceptProofBtn" style="display:none;">Aceptar y Revelar WhatsApp</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/services/SecurityService.js"></script>
+    <script src="js/services/ApiService.js"></script>
+    <script src="js/controllers/PostController.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1778282590223,
+    "author": "Test User",
+    "dniHash": "$2b$10$e.PWQb0e8wQZkr9m8vaoB.J.1dng9qtrrIxbOa3XGtMQ19pWQUkTS",
+    "description": "Objeto de prueba para cifrado.",
+    "whatsapp": "877eaa9da3066425890c882c2d6bee41:4e8ab4c17947435c9b3277d7859fe095",
+    "image": null,
+    "date": "2026-05-08T23:23:10.223Z"
+  },
+  {
+    "id": 1,
+    "author": "Juan Pérez",
+    "description": "Perdí mi tomatodo negro en el pabellón A, aula 102. Tiene un par de rasguños en la base.",
+    "whatsapp": "060b05a005ae722fedd3582f0793a286:cae6c0b2e888bc95171ea59eaf57c3c8",
+    "image": "/imgs/tomatodo_negro.jpg",
+    "date": "2026-05-08T10:00:00Z"
+  },
+  {
+    "id": 2,
+    "author": "María Gómez",
+    "description": "Encontré un cargador de iPhone en la biblioteca (segundo piso). Lo dejé en recepción.",
+    "whatsapp": "0d1bda7b3863e3fe18d308bf916ad3f2:3881f5ef94a9f5e96f5fee9f1c78f7bc",
+    "image": "/imgs/cargador_iphone.jpg",
+    "date": "2026-05-08T11:00:00Z"
+  },
+  {
+    "id": 3,
+    "author": "Carlos López",
+    "description": "Se me perdió un terno negro completo, lo dejé olvidado cerca de los vestuarios del gimnasio de la universidad. Es urgente recuperarlo.",
+    "whatsapp": "2dc4a7c0f9c0a54274e8638445050f89:31d697a255d0a9a5626204c0a220ead6",
+    "image": "/imgs/terno_negro.jpg",
+    "date": "2026-05-08T11:30:00Z"
+  },
+  {
+    "id": 4,
+    "author": "Ana Torres",
+    "description": "Perdí unos lentes de medida con marco azul marino en el laboratorio de cómputo. No tienen estuche.",
+    "whatsapp": "1ad11ce58c9d48352e1c68e7ba341b7f:9a28a6f6b009e5da7cd574ad274a698c",
+    "image": null,
+    "date": "2026-05-08T12:00:00Z"
+  },
+  {
+    "id": 5,
+    "author": "Diego Flores",
+    "description": "Encontré una mochila gris marca Porta en la cafetería principal. Preguntar a las señoras que atienden.",
+    "whatsapp": "3c7d7f46d3df839f219b9db2c5e097dc:b390cdd72fcad8532cb7c967e803978a",
+    "image": null,
+    "date": "2026-05-08T13:00:00Z"
+  }
+]
