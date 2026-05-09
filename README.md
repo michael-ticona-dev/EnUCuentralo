@@ -26,17 +26,16 @@ Su objetivo es reducir la pérdida de objetos personales mediante un sistema rá
 
 ---
 
-## ⚙️ Latex
+## 📄 Documentación LaTeX
 
 https://www.overleaf.com/project/69fe7a8eb9617997639b17be/invite/token/f7e0daf815e9ce332b69bc2bdc528783f0085294e469a2ce
 
 ---
 
-## ⚙️ Instalación
-
-Clona el repositorio:
+## ⚙️ Instalación y levantamiento del proyecto
 
 ```bash
 git clone https://github.com/michael-ticona-dev/EnUCuentralo.git
-
-
+cd EnUCuentralo
+npm install
+npm start
