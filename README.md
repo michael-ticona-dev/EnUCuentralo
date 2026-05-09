@@ -31,4 +31,4 @@ Su objetivo es reducir la pérdida de objetos personales mediante un sistema rá
 Clona el repositorio:
 
 ```bash
-git clone https://github.com/tuusuario/enucuentralo.git
+git clone https://github.com/michael-ticona-dev/EnUCuentralo.git
