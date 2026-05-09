@@ -26,13 +26,15 @@ Su objetivo es reducir la pérdida de objetos personales mediante un sistema rá
 
 ---
 
+## ⚙️ Latex
+
+https://www.overleaf.com/project/69fe7a8eb9617997639b17be/invite/token/f7e0daf815e9ce332b69bc2bdc528783f0085294e469a2ce
+
+---
+
 ## ⚙️ Instalación
 
 Clona el repositorio:
-
----
-https://www.overleaf.com/project/69fe7a8eb9617997639b17be/invite/token/f7e0daf815e9ce332b69bc2bdc528783f0085294e469a2ce
-
 
 ```bash
 git clone https://github.com/michael-ticona-dev/EnUCuentralo.git
